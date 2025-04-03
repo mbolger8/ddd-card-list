@@ -63,6 +63,15 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
       h3 span {
         font-size: var(--ddd-card-list-label-font-size, var(--ddd-font-size-s));
       }
+      .card {
+        height: var(--ddd-card-height, 300px);
+        width: var(--ddd-card-width, 200px);
+        display: flex;
+        flex-direction: column;
+        background-color: var(--ddd-theme-accent);
+        border-radius: var(--ddd-border-radius-m);
+        box-shadow: var(--ddd-shadow-1);
+      }
     `];
   }
 

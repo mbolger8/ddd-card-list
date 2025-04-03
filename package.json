@@ -1,5 +1,5 @@
 {
-    "name": "@yourOrganization/ddd-card-list",
+    "name": "ddd-card-list",
     "version": "0.0.0",
     "description": "Webcomponent ddd-card-list following hax / open-wc recommendations",
     "license": "Apache-2.0",
