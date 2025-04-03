@@ -33,7 +33,7 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
     this.registerLocalization({
       context: this,
       localesPath:
-        new URL("./locales/ddd-card.ar.json", import.meta.url).href +
+        new URL("./locales/ddd-card-list.ar.json", import.meta.url).href +
         "/../",
       locales: ["ar", "es", "hi", "zh"],
     });
