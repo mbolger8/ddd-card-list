@@ -7,15 +7,15 @@ import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
 
 /**
- * `ddd-card-list`
+ * `ddd-card`
  * 
  * @demo index.html
- * @element ddd-card-list
+ * @element ddd-card
  */
-export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
+export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
 
   static get tag() {
-    return "ddd-card-list";
+    return "ddd-card";
   }
 
   constructor() {
@@ -33,7 +33,7 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
     this.registerLocalization({
       context: this,
       localesPath:
-        new URL("./locales/ddd-card-list.ar.json", import.meta.url).href +
+        new URL("./locales/ddd-card.ar.json", import.meta.url).href +
         "/../",
       locales: ["ar", "es", "hi", "zh"],
     });
@@ -45,10 +45,11 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
       ...super.properties,
       title: { type: String },
       description: { type: String },
+      link: { type: String },
       image: { type: String },
       button: { type: String },
       buttonLink: { type: String },
-      primary: {type: String, reflect: true, attribute: "ddd-primary"},
+      primary: {type: String, reflect: true, attribute: "data-primary"},
     };
   }
 
@@ -80,7 +81,20 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
   render() {
     return html`
 <div class="wrapper">
-  <slot></slot>
+    <div class="card">
+        <div class="img">
+            <img src="${this.image}" alt="${this.title}"/>
+        </div>
+        <div class="title">
+            <h3>${this.title}</h3>
+        </div>
+        <div class="description">
+            <slot></slot>
+        </div>
+        <div class="button">
+            <button @click="${this.handleButtonClick}">${this.button}</button>
+        </div>
+    </div>
 </div>`;
   }
 
@@ -93,4 +107,4 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
   }
 }
 
-globalThis.customElements.define(DddCardList.tag, DddCardList);
+globalThis.customElements.define(DddCard.tag, DddCard);

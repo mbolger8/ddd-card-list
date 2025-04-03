@@ -34,11 +34,20 @@
 
 <body>
   <div id="demo">
-    <h1>ddd-card-list</h1>
     <!-- this is going to do whatever the tag's defaults are -->
-    <h2>Default</h2>
-    <ddd-card-list></ddd-card-list>
+    <h2>Campus Locations</h2>
+    <ddd-card-list>
+      <ddd-card
+      title = "Abington"
+      image = "https://www.abington.psu.edu/sites/abington/files/styles/left_feature_area/public/_mg_2070_edit_saturatedweb_1.jpg?itok=YKm58lNs"
+      button="Explore" buttonLink="https://www.psu.edu/academics/campuses/abington"
+      >
+      <p>Abington is a small campus located in the suburbs of Philadelphia. It offers a variety of undergraduate programs and is known for its close-knit community.</p>
+      </ddd-card>
+  </ddd-card-list>
   </div>
   <script type="module" src="./ddd-card-list.js"></script>
+  <script type="module" src="./ddd-card.js"></script>
+
 </body>
 </html>
