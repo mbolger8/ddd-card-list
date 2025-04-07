@@ -12,21 +12,16 @@
       margin: 0;
       padding: 0;
     }
-    #demo {
-      margin: var(--ddd-spacing-2);
-    }
     ddd-card-list {
       margin: var(--ddd-spacing-2);
       border: var(--ddd-border-md);
       border-radius: var(--ddd-radius-lg);
+      background-color: var(--ddd-background-color, #EEF3F7);
+      color: var(--ddd-color, #262626);
+      display: grid;
     }
     ddd-card-list:hover {
       box-shadow: var(--ddd-boxShadow-sm);
-    }
-    #example {
-      --ddd-card-list-font-size: var(--ddd-font-size-l);
-      background-color: var(--ddd-accent-2);
-      color: var(--ddd-primary-17);
     }
   </style>
   <title>ddd-card-list</title>
@@ -40,7 +35,14 @@
       <ddd-card
       title = "Abington"
       image = "https://images.ctfassets.net/ni9rh5nu0d99/1paFaX2Dc7iHh9Z6K7mIim/1427b9970ff21dd9c8a770067638efc1/abington-02.jpg?fm=webp&w=1920&q=75"
-      button="Explore" buttonLink="https://www.psu.edu/academics/campuses/abington"
+      link="https://www.psu.edu/academics/campuses/abington"
+      >
+      <p>Abington is a small campus located in the suburbs of Philadelphia. It offers a variety of undergraduate programs and is known for its close-knit community.</p>
+      </ddd-card>
+      <ddd-card
+      title = "Abington"
+      image = "https://images.ctfassets.net/ni9rh5nu0d99/1paFaX2Dc7iHh9Z6K7mIim/1427b9970ff21dd9c8a770067638efc1/abington-02.jpg?fm=webp&w=1920&q=75"
+      link="https://www.psu.edu/academics/campuses/abington"
       >
       <p>Abington is a small campus located in the suburbs of Philadelphia. It offers a variety of undergraduate programs and is known for its close-knit community.</p>
       </ddd-card>
