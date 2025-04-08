@@ -44,17 +44,20 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
     return [super.styles,
     css`
       :host {
-        display: block;
+        display: inline-block;
         border: 1px solid var(--ddd-border-color, #ccc);
         border-radius: var(--ddd-border-radius, 12px);
         width: var(--ddd-card-width, 400px);
         font-family: var(--ddd-font-family, Arial, sans-serif);
         background-color: var(--ddd-background-color, #fff);
+        justify-content: center;
+        align-items: center;
+        margin: 16px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
       .wrapper {
         display: flex;
         flex-wrap: wrap;
-        gap: 20px;
         border-radius: var(--ddd-border-radius, 12px);
       }
       h3 span {
@@ -63,9 +66,14 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
       .card {
         width: var(--ddd-card-width, 100%);
       }
+      .img {
+        border-bottom: 12px var(--ddd-theme-default-nittanyNavy) solid;
+      }
       .img img{
         width: 100%;
-        object-fit: cover;
+        height: auto;
+        display: block;
+        border-radius: var(--ddd-border-radius, 12px) var(--ddd-border-radius, 12px) 0 0;
       }
       .title {
         text-align: inherit;
@@ -75,28 +83,48 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
         line-height: 120%;
         letter-spacing: normal;
         color: var(--theme-ui-colors-nittanyNavy);
+        margin-left: 1.5rem;
+      }
+      button {
+        width: 100%;
+        background-color: var(--ddd-background-color, #005fa9);
+        color: white;
+        font-size: 1rem;
+        font-weight: bold;
+        border: none;
+        border-radius: 4px;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+        margin-bottom: 1.5rem;
       }
       .button {
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: var(--ddd-border-radius, 4px);
-        color: var(--theme-ui-colors-white);
-        background-color: var(--ddd-background-color, #005fa9);
-        padding-top: 0.75rem;
-        padding-bottom: 0.75rem;
         padding-left: 1.5rem;
-        padding-right: 1rem;
+        padding-right: 1.5rem;
       }
+      button:hover {
+        background-color: var(--ddd-background-color, #004080);
+      }
+
+
       .description {
-        text-align: inherit;
+        text-align: left;
         font-size: 1.125rem;
         font-family: Arial, Tahoma, sans-serif;
         font-weight: 400;
         line-height: 150%;
         letter-spacing: normal;
         color: var(--theme-ui-colors-coalyGray);
-        margin-bottom: 0rem;
+        margin-left: 1.25rem;
+        margin-right: 1.25rem;
+  
+      }
+      .title{
+        text-align: left;
       }
     `];
   }
