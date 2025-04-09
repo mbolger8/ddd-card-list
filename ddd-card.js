@@ -44,10 +44,10 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
     return [super.styles,
     css`
       :host {
-        display: inline-block;
+        display: inline-flex;
         border: 1px solid var(--ddd-border-color, #ccc);
         border-radius: var(--ddd-border-radius, 12px);
-        width: var(--ddd-card-width, 400px);
+        width: var(--ddd-card-width, 390px);
         font-family: var(--ddd-font-family, Arial, sans-serif);
         background-color: var(--ddd-background-color, #fff);
         justify-content: center;
@@ -60,14 +60,18 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
         flex-wrap: wrap;
         border-radius: var(--ddd-border-radius, 12px);
       }
-      h3 span {
-        font-size: var(--ddd-card-list-label-font-size, var(--ddd-font-size-s));
+      h2{
+        margin: 0;
+      }
+      p {
+        margin: 0;
+        padding: 0;
       }
       .card {
         width: var(--ddd-card-width, 100%);
       }
       .img {
-        border-bottom: 12px var(--ddd-theme-default-nittanyNavy) solid;
+        border-bottom: 0.75rem var(--ddd-theme-default-nittanyNavy) solid;
       }
       .img img{
         width: 100%;
@@ -75,15 +79,21 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
         display: block;
         border-radius: var(--ddd-border-radius, 12px) var(--ddd-border-radius, 12px) 0 0;
       }
+      .box {
+        padding-right: 1rem;
+        padding-left: 1rem;
+        padding-top: 0.75rem;
+        padding-bottom: 1.25rem;
+      }
       .title {
         text-align: inherit;
+        text-align: left;
         font-size: 1.375rem;
         font-family: Roboto, Arial, Tahoma, sans-serif;
         font-weight: 700;
         line-height: 120%;
         letter-spacing: normal;
-        color: var(--theme-ui-colors-nittanyNavy);
-        margin-left: 1.5rem;
+        color: var(--ddd-theme-default-nittanyNavy);
       }
       button {
         width: 100%;
@@ -93,23 +103,19 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
         font-weight: bold;
         border: none;
         border-radius: 4px;
-        padding-top: 0.75rem;
-        padding-bottom: 0.75rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
         cursor: pointer;
         transition: all 0.2s ease-out;
-        margin-bottom: 1.5rem;
       }
       .button {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
       }
       button:hover {
-        background-color: var(--ddd-background-color, #004080);
+        background-color: var(--ddd-theme-default-nittanyNavy);
       }
-
 
       .description {
         text-align: left;
@@ -119,12 +125,8 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
         line-height: 150%;
         letter-spacing: normal;
         color: var(--theme-ui-colors-coalyGray);
-        margin-left: 1.25rem;
-        margin-right: 1.25rem;
-  
-      }
-      .title{
-        text-align: left;
+        padding-top: 0.5rem;
+        padding-bottom: 0.75rem;
       }
     `];
   }
@@ -141,14 +143,16 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
         <div class="img">
             <img src="${this.image}" alt="${this.title}"/>
         </div>
+        <div class="box">
         <div class="title">
-            <h3>${this.title}</h3>
+            <h2>${this.title}</h2>
         </div>
         <div class="description">
             <slot></slot>
         </div>
         <div class="button">
           <button @click=${this.clickEvent}>Explore ></button>
+        </div>
         </div>
     </div>
 </div>`;
